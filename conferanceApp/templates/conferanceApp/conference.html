@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>description</td>
+            <td>start date</td>
+            <td>end date</td>
+            <td>location</td>
+            <td>price</td>
+            <td>capacity</td>
+            <td>category</td>
+            <td>details<td>
+        </tr>
+        {% for conf in list %}
+        <tr><td></td>
+            <td>{{conf.title}}</td>
+            <td>{{conf.description}}</td>
+            <td>{{conf.start_date}}</td>
+            <td>{{conf.end_date}}</td>
+            <td>{{conf.location}}</td>
+            <td>{{conf.price}}</td>
+            <td>{{conf.capacity}}</td>
+            <td>{{conf.category}}</td>
+            <td> <a href='{% url 'conferance_detail' conf.id%}'>detail<a>
+                  <td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

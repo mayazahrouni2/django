@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>{{conference.title}}</h1>
+<ul>
+    
+    <li>{{conference.description}}</li>
+    <li>{{conference.start_date}}</li>
+    <li>{{conference.end_date}}</li>
+    <li>{{conference.location}}</li>
+    <li>{{conference.price}}</li>
+    <li>{{conference.capacity}}</li>
+    <li>{{conference.category}}</li>
+
+</ul>
+<ul>
+    {% for reservation in reservations %}
+<li>
+            {{ reservation.participant.username }} - {{ reservation.reservation_date }} 
+            {% if reservation.confirmed %} (Confirmed) {% else %} (Pending) {% endif %}
+</li>
+    {% empty %}
+<li>No reservations found.</li>
+    {% endfor %}</ul>
+<a href='{% url 'conferance_list' %}'>retour liste<a>
+</body>
+</html>
